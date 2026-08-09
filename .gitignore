@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node and TypeScript
+node_modules/
+*.tsbuildinfo
+
+# Build, test, and log output
+build/
+dist/
+coverage/
+*.log
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Operating systems
+.DS_Store
+Thumbs.db
+

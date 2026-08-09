@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+  echo "Usage: ./run <solution.py|solution.js|solution.ts> [args...]"
+}
+
+if (( $# == 0 )); then
+  usage >&2
+  exit 64
+fi
+
+solution_file=$1
+shift
+
+if [[ ! -f "$solution_file" ]]; then
+  echo "Error: file not found: $solution_file" >&2
+  exit 66
+fi
+
+case "$solution_file" in
+  *.py)
+    python3 "$solution_file" "$@"
+    ;;
+  *.js)
+    node "$solution_file" "$@"
+    ;;
+  *.ts)
+    if [[ ! -x ./node_modules/.bin/tsx ]]; then
+      echo "Error: TypeScript runner is not installed. Run 'npm install' first." >&2
+      exit 69
+    fi
+    ./node_modules/.bin/tsx "$solution_file" "$@"
+    ;;
+  *)
+    echo "Error: unsupported file type: $solution_file" >&2
+    usage >&2
+    exit 64
+    ;;
+esac
+

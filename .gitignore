@@ -24,10 +24,10 @@ coverage/
 
 # Editors
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 *.swp
 
 # Operating systems
 .DS_Store
 Thumbs.db
-

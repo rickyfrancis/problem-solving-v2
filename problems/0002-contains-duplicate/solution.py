@@ -1,6 +1,6 @@
 # Leetcode 217. Contains Duplicate
 
-def containsDuplicate(self, nums: List[int]) -> bool:
+def containsDuplicate(nums: List[int]) -> bool:
     hashset = set()
 
     for n in nums:

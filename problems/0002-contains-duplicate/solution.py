@@ -1,5 +1,7 @@
 # Leetcode 217. Contains Duplicate
 
+from typing import List
+
 def containsDuplicate(nums: List[int]) -> bool:
     hashset = set()
 
